@@ -1,24 +1,60 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, default: ""|
+|password|string|null: false, default: ""|
 
-Things you may want to cover:
+### Association
+- has_many :entries
+- has_many :comments
 
-* Ruby version
 
-* System dependencies
+## entriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|text|string|null: false|
+|image|string||
+|url|text||
 
-* Configuration
+### Association
+- has_many :tag_maps
+- has_many :tags, through: :tag_maps
+- has_many :comments
+- belongs_to :user
 
-* Database creation
 
-* Database initialization
+## tag_mapsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|entry_id|references|foreign_key: true|
+|tag_id|references|foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :entry
+- belongs_to :tag
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
 
-* ...
+### Association
+- has_many :tag_maps
+- has_many :entries, through: :tag_maps
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|user_id|references|foreign_key: true|
+|entry_id|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :entry
