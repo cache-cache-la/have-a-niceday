@@ -1,1 +1,60 @@
-サイド
+.side
+  .side__header
+    .side__header__appname
+      = image_tag "appname_spring.png", size: "250x193", alt: "春の看板"
+    .side__header__system-menu
+      .side__header__system-menu__user
+        = link_to image_tag("user_edit.png", size: "30x41", alt: "ユーザー編集"), "#"
+      .side__header__system-menu__post
+        = link_to image_tag("users_post.png", size: "32x37", alt: "投稿"), "#"
+      .side__header__system-menu__official-twitter
+        = link_to image_tag("bluebird.png", size: "45x41", alt: "製作者のTwitter"), "https://twitter.com/cache_cache_la", target: :_blank
+
+  .side__box
+    .side__box__keyword-search
+      .form
+        .search-words
+        .search-btn
+
+    .side__box__tags
+
+    .side__box__tag-list
+
+      %ul.side__box__tag-list__time
+        %b 所要時間
+        %li.tag__few-minutes
+          1時間以内
+        %li.tag__a-few-hours
+          数時間
+        %li.tag__half-a-day
+          半日
+        %li.tag__one-day
+          1日
+        %li.tag__long-term
+          長期間
+
+      %ul.side__box__tag-list__place
+        %b 場所
+        %li.tag__myhome
+          自宅
+        %li.tag__indoor-hobby
+          屋内
+        %li.tag__indoor-activity
+          屋内のアクティビティ
+        %li.tag__outdoors-hobby
+          屋外
+        %li.tag__outdoors-activity
+          屋外のアクティビティ
+
+      %ul.side__box__tag-list__feeling
+        %b 気分や雰囲気
+        %li.tag__calm
+          calm
+        %li.tag__soft
+          soft
+        %li.tag__happy
+          happy
+        %li.tag__excite
+          excite
+        %li.tag__impact
+          impact
