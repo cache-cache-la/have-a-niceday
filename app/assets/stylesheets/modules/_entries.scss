@@ -1,3 +1,26 @@
-* {
-  box-sizing: border-box;
+.entries {
+  height: calc(100% - 80px);
+
+  &__latest-title {
+    background-image: url(latest_entries.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 71px;
+    width: 184px;
+    margin: 20px 20px 0;
+  }
+  &__latest-tiles {
+    height: calc(100% - 200px);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .tile {
+      background-color: white;
+      height: calc(33.3% - 20px);
+      width: calc(33.3% - 20px);
+      padding: 20px;
+      margin: 10px;
+    }
+  }
 }

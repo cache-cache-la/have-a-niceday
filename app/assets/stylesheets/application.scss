@@ -1,7 +1,11 @@
 @import "./reset";
+@import "./config/color";
+@import "./config/font";
+@import "./config/variable";
+@import "./config/common";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-// @import "./header";
-// @import "./side";
+@import "./side";
+@import "./container";
 @import "modules/entries";
-// @import "./footer";
+@import "./footer";
