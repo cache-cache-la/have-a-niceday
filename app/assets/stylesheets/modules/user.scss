@@ -23,23 +23,17 @@
     }
   }
   .account-page__inner {
-    height: 1050px;
-    margin: 60px auto;
+    height: 1100px;
+    margin: 40px auto;
     padding: 60px;
 
     &__header {
       h2 {
-        margin-bottom: 10px;
+        margin-bottom: 50px;
         letter-spacing: 3px;
         font-size: 40px;
         font-weight: 200;
         border-bottom: 1px solid $spring_meadow;
-      }
-
-      h5 {
-        margin-bottom: 20px;
-        font-size: 14px;
-        font-weight: 200;
       }
     }
 
@@ -91,19 +85,47 @@
       }
     }
 
-    .field-input {
-      .field_with_errors {
-        position: relative;
+    // .field-input {
+    //   .field_with_errors {
+    //     position: relative;
 
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          width: 5px;
-          background-color: $berry_jam;
+    //     &:after {
+    //       content: '';
+    //       display: block;
+    //       position: absolute;
+    //       top: 0;
+    //       right: 0;
+    //       bottom: 0;
+    //       width: 5px;
+    //       background-color: $berry_jam;
+    //     }
+    //   }
+    // }
+
+    &__entries {
+      height: calc(100% - 450px);
+      margin-top: 100px;
+
+      &__title {
+        h2 {
+          letter-spacing: 3px;
+          font-size: 40px;
+          font-weight: 200;
+          border-bottom: 1px solid $spring_meadow;
+        }
+      }
+      &__tiles {
+        margin-top: 60px;
+        height: 316px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .tile {
+          background-color: white;
+          height: calc(100% - 20px);
+          width: calc(33.3% - 20px);
+          padding: 20px;
+          margin: 10px;
         }
       }
     }
@@ -143,7 +165,7 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid #ddd;
+  border: 1px solid $soft_mocha;
   border-radius: 2px;
 
   h2 {

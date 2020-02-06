@@ -1,19 +1,20 @@
 .entries {
   height: calc(100% - 80px);
 
-  &__latest-title {
+  &__top {
     margin: 20px 20px 0;
     display: flex;
     justify-content: space-between;
 
-    .label {
-      background-image: url(latest_entries.png);
+    &__left-corner {
+      background-image: url(entries_corner.png);
       background-size: contain;
       background-repeat: no-repeat;
-      height: 71px;
-      width: 184px;
+      transform: rotateZ(270deg);
+      height: 100px;
+      width: 100px;
     }
-    .up-corner {
+    &__right-corner {
       background-image: url(entries_corner.png);
       background-size: contain;
       background-repeat: no-repeat;
@@ -21,9 +22,19 @@
       width: 100px;
     }
   }
+  &__latest-title {
+    margin: 20px 60px 10px;
+    h2 {
+      letter-spacing: 3px;
+      font-size: 40px;
+      font-weight: 200;
+      border-bottom: 1px solid $spring_meadow;
+    }
+  }
+
   &__latest-tiles {
-    height: calc(100% - 250px);
-    padding: 20px;
+    height: calc(100% - 350px);
+    padding: 60px;
     display: flex;
     flex-wrap: wrap;
 

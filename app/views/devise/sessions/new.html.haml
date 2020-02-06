@@ -6,12 +6,14 @@
 
   .account-page__inner
     .account-page__inner__header
-      %h2 Log in
-      %h5 登録しているユーザーでログイン
-      = render "devise/shared/links"
+      %h2 ログイン
     .account-page__inner__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
+          .field-label
+            = f.label :登録名
+          .field-input
+            = f.text_field :name, autofocus: true
           .field-label
             = f.label :email
           .field-input
@@ -24,6 +26,7 @@
               = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "Log in", class: 'btn'
+    = render "devise/shared/links"
 
   .account-page__bottom
     .account-page__bottom__left-corner
