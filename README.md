@@ -19,6 +19,7 @@
 |text|string|null: false|
 |image|string||
 |url|text||
+|user_id|references|foreign_key: true|
 
 ### Association
 - has_many :tag_maps
