@@ -1,0 +1,36 @@
+#account-page.account-page
+  .account-page__top
+    .account-page__top__left-corner
+    .account-page__top__right-corner
+
+  .account-page__inner
+    .account-page__inner__header
+      %h2 マイページ
+    .account-page__inner__form
+      = form_for(current_user) do |f|
+        .field
+          .field-label
+            = f.label :name
+          .field-input
+            = f.text_field :name, autofocus: true
+        .field
+          .field-label
+            = f.label :email
+          .field-input
+            = f.email_field :email
+        .actions
+          = f.submit "Update", class: 'btn'
+    = link_to "Log out", destroy_user_session_path, method: :delete, class: 'btn'
+    = link_to "Home", :back, class: 'btn'
+
+    .account-page__inner__entries
+      .account-page__inner__entries__title
+        %h2 投稿一覧
+      %ul.account-page__inner__entries__tiles
+        %li.tile
+        %li.tile
+        %li.tile
+
+  .account-page__bottom
+    .account-page__bottom__left-corner
+    .account-page__bottom__right-corner

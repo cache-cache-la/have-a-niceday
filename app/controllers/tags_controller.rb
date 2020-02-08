@@ -1,4 +1,4 @@
-class EntriesController < ApplicationController
+class TagsController < ApplicationController
   def index
   end
 
