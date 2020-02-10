@@ -10,7 +10,7 @@
           = link_to image_tag("new_user.png", size: "30x41", alt: "新規登録"), new_user_registration_path
       .side__header__system-menu__post
         -if user_signed_in?
-          = link_to image_tag("users_post.png", size: "32x37", alt: "投稿"), "#"
+          = link_to image_tag("users_post.png", size: "32x37", alt: "投稿"), new_entry_path
         -else
           = link_to image_tag("current_user.png", size: "30x41", alt: "ログイン"), new_user_session_path
       .side__header__system-menu__official-twitter
@@ -29,38 +29,36 @@
       %ul.side__box__tag-list__time
         %b 所要時間
         %li.tag__few-minutes
-          1時間以内
+          = link_to "1時間以内", "/entries/#{@tag_id}/"
         %li.tag__a-few-hours
-          数時間
+          = link_to "数時間", "/entries/#{@tag_id}/"
         %li.tag__half-a-day
-          半日
+          = link_to "半日", "/entries/#{@tag_id}/"
         %li.tag__one-day
-          1日
+          = link_to "1日", "/entries/#{@tag_id}/"
         %li.tag__long-term
-          長期間
+          = link_to "長時間", "/entries/#{@tag_id}/"
 
       %ul.side__box__tag-list__place
         %b 場所
         %li.tag__myhome
-          自宅
-        %li.tag__indoor-hobby
-          屋内
-        %li.tag__indoor-activity
-          屋内のアクティビティ
-        %li.tag__outdoors-hobby
-          屋外
-        %li.tag__outdoors-activity
-          屋外のアクティビティ
+          = link_to "自宅", "/entries/#{@tag_id}/"
+        %li.tag__indoor
+          = link_to "屋内", "/entries/#{@tag_id}/"
+        %li.tag__outdoor
+          = link_to "屋外", "/entries/#{@tag_id}/"
+        %li.tag__noplace
+          = link_to "場所不問", "/entries/#{@tag_id}/"
 
       %ul.side__box__tag-list__feeling
-        %b 気分や雰囲気
+        %b 気分／雰囲気
         %li.tag__calm
-          calm
+          = link_to "calm", "/entries/#{@tag_id}/"
         %li.tag__soft
-          soft
+          = link_to "soft", "/entries/#{@tag_id}/"
         %li.tag__happy
-          happy
+          = link_to "happy", "/entries/#{@tag_id}/"
         %li.tag__excite
-          excite
+          = link_to "excite", "/entries/#{@tag_id}/"
         %li.tag__impact
-          impact
+          = link_to "impact", "/entries/#{@tag_id}/"

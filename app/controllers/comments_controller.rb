@@ -1,22 +1,12 @@
 class CommentsController < ApplicationController
-  def index
-  end
-
-  def new
-  end
-
   def create
+    @comment = Comment.create(text: comment_params[:text], entry_id: comment_params[:entry_id], user_id: current_user.id)
+    redirect_to "/entry/#{comment_params[:entry_id]}"
   end
 
-  def edit
-  end
+  private
 
-  def update
-  end
-
-  def show
-  end
-
-  def destroy
+  def comment_params
+    params.permit(:text, :entry_id)
   end
 end

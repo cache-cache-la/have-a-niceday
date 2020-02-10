@@ -11,6 +11,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    user = User.find(params[:id])
+    @name = current_user&.name
+    @entries = user.entries.order("created_at DESC").page(params[:page]).per(3)
+  end
+
   private
 
   def user_params

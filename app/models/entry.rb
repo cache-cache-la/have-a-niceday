@@ -10,4 +10,8 @@ class Entry < ApplicationRecord
   end
 
   mount_uploader :image, ImageUploader
+
+  VALID_URL_REGEX = /\A#{URI::regexp(%w(http https))}\z/
+  validates :url, allow_blank: true, format: { with: VALID_URL_REGEX }
+
 end

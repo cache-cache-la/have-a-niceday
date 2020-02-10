@@ -1,0 +1,134 @@
+.entryform {
+  height: calc(100% - 80px);
+
+  &__top {
+    margin: 20px 20px 0;
+    display: flex;
+    justify-content: space-between;
+
+    &__left-corner {
+      background-image: url(entries_corner.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotateZ(270deg);
+      height: 100px;
+      width: 100px;
+    }
+    &__right-corner {
+      background-image: url(entries_corner.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  &__inner {
+    height: 1100px;
+    margin: 40px auto;
+    padding: 60px;
+
+    &__header {
+      h2 {
+        margin-bottom: 50px;
+        letter-spacing: 3px;
+        font-size: 40px;
+        font-weight: 200;
+        border-bottom: 1px solid $spring_meadow;
+      }
+    }
+    .field {
+      margin-bottom: 10px;
+
+      .field-label {
+
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 200;
+
+        i {
+          font-size: 11px;
+        }
+      }
+
+      .field-input {
+        input {
+          width: 100%;
+          padding: 10px;
+          letter-spacing: 1px;
+        }
+        #entry_text {
+          width: 100%;
+          height: 200px;
+          padding: 10px;
+          border: solid 1px lightgray;
+          letter-spacing: 1px;
+        }
+      }
+      .field-tags {
+
+        &__title {
+          margin: 10px 0;
+          padding: 10px 0;
+          letter-spacing: 1px;
+          font-size: 14px;
+          font-weight: 200;
+        }
+        &__category {
+          padding: 10px;
+          letter-spacing: 1px;
+        }
+      }
+      .field-image {
+        i {
+          cursor: pointer;
+
+          .field-file {
+            display: none;
+          }
+        }
+      }
+    }
+    .btn {
+      display: inline-block;
+      height: 50px;
+      padding: 0 30px;
+      line-height: 50px;
+      letter-spacing: 1px;
+      text-align: center;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    input[type='submit'] {
+      margin-top: 20px;
+      color: #fff;
+      background-color: $sunny_side_up;
+    }
+  }
+
+  .entryform__bottom {
+    margin: 20px 20px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .entryform__bottom__left-corner {
+      background-image: url(entries_corner.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotateZ(180deg);
+      height: 100px;
+      width: 100px;
+    }
+    .entryform__bottom__right-corner {
+      background-image: url(entries_corner.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotateZ(90deg);
+      height: 100px;
+      width: 100px;
+    }
+  }
+}

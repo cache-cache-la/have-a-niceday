@@ -1,0 +1,53 @@
+.entryform
+  .entryform__top
+    .entryform__top__left-corner
+    .entryform__top__right-corner
+
+  .entryform__inner
+    .entryform__inner__header
+      %h2 新規投稿
+    .entryform__innner__form
+      = form_for @entry do |f|
+        .field
+          .field-label
+            = f.label :タイトル
+          .field-input
+            = f.text_field :title, autofocus: true
+
+          .field_tags
+            .field-tags__title
+              タグ一覧
+            .field-tags__time
+              = f.label :所要時間, class: "field-tags__category"
+              = f.collection_check_boxes :tag_ids, Tag.all.to_a.slice(0..4), :id, :name
+
+            .field-tags__place
+              = f.label :場所, class: "field-tags__category"
+              = f.collection_check_boxes :tag_ids, Tag.all.to_a.slice(5..8), :id, :name
+
+            .field-tags__feeling
+              = f.label :気分／雰囲気, class: "field-tags__category"
+              = f.collection_check_boxes :tag_ids, Tag.all.to_a.slice(9..13), :id, :name
+
+        .field
+          .field-label
+            = f.label :本文
+          .field-input
+            = f.text_area :text
+        .field
+          .field-label
+            画像選択
+          = f.label :image, class: "field-image" do
+            %i.far.fa-image.fa-2x
+              = f.file_field :image, class: "field-file"
+        .field
+          .field-label
+            = f.label :URL
+          .field-input
+            = f.text_field :url, style:"ime-mode:disabled;"
+        .actions
+          = f.submit "New Entry", class: 'btn'
+
+  .entryform__bottom
+    .entryform__bottom__left-corner
+    .entryform__bottom__right-corner
