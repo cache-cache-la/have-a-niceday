@@ -5,16 +5,17 @@
 .entries__latest-title
   %h2 最新投稿
 
-%ul.entries__latest-tiles
-  %li.tile
-  %li.tile
-  %li.tile
-  %li.tile
-  %li.tile
-  %li.tile
-  %li.tile
-  %li.tile
-  %li.tile
+.entries__latest-tiles
+  - entries.each do |entry|
+    .tile
+      - if entry.image.present?
+        = image_tag entry.image.url, class: "tile__image"
+      - else
+        = image_tag "noimage.png", size: "225x225", alt: "no image"
+      .tile__title
+        = entry.title
+      .tile__user-name
+        = entry.user.name
 
 .entries__bottom
   .entries__bottom__left-corner

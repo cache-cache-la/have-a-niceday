@@ -127,6 +127,24 @@
           width: calc(33.3% - 20px);
           padding: 20px;
           margin: 10px;
+          display: flex;
+          flex-direction: column;
+    
+          &__image {
+            background-color: $gentle_sky;
+            height: 225px;
+            object-fit: cover;
+          }
+          &__title {
+            margin-top: 5px;
+            height: 18px;
+            text-overflow: ellipsis;
+          }
+          &__user-name {
+            height: 18px;
+            text-align: right;
+            text-overflow: ellipsis;
+          }
         }
       }
     }

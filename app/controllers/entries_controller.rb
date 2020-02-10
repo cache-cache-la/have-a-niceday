@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:edit, :show]
 
   def index
-    @entries = Entry.includes(:user).order("created_at DESC").page(params[:page]).per(9)
+    @entries = Entry.all.includes(:user).order("created_at DESC").page(params[:page]).per(9)
     # @tag = Tag.find_by(id: params[:id])
     # @entries = @tag.entries
   end
@@ -13,7 +13,6 @@ class EntriesController < ApplicationController
   end
 
   def create
-    # binding.pry
     Entry.create(entry_params)
   end
 

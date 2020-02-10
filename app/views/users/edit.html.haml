@@ -26,10 +26,17 @@
     .account-page__inner__entries
       .account-page__inner__entries__title
         %h2 投稿一覧
-      %ul.account-page__inner__entries__tiles
-        %li.tile
-        %li.tile
-        %li.tile
+      .account-page__inner__entries__tiles
+        - @entries.each do |entry|
+          .tile
+            - if entry.image.present?
+              = image_tag entry.image.url, class: "tile__image"
+            - else
+              = image_tag "noimage.png", size: "225x225", alt: "no image"
+            .tile__title
+              = entry.title
+            .tile__user-name
+              = entry.user.name
 
   .account-page__bottom
     .account-page__bottom__left-corner

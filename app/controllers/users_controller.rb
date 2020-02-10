@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def edit
+    @entries = current_user.entries.page(params[:page]).per(3).order("created_at DESC")
   end
 
   def update

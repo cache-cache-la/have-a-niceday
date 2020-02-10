@@ -1,0 +1,38 @@
+.entry__top
+  .entry__top__left-corner
+  .entry__top__right-corner
+
+.entry__title
+  %h2 投稿詳細
+
+.entry__detail
+  - if @entry.image.present?
+    = image_tag @entry.image.url, class: "entry__detail__image"
+  - else
+    = image_tag "noimage.png", size: "450x450", alt: "no image"
+  .entry__detail__title
+    = @entry.title
+  .entry__detail__user-name
+    = @entry.user.name
+  .entry__detail__text
+    = @entry.text
+  .entry__detail__url
+  .entry__comments
+    .entry__comments__form
+      = form_for @comment do |f|
+        .field
+          .field-label
+            = f.label :コメント
+          .field-input
+            = f.text_field :comment, autofocus: true
+        .actions
+          = f.submit "Send", class: 'btn'
+
+    - if @comments.present?
+      = @comments.each do |comment|
+        = comment.text, class: "entry__comments__text"
+        = comment.user.name, class: "entry__comments__user-name"
+
+.entries__bottom
+  .entries__bottom__left-corner
+  .entries__bottom__right-corner
