@@ -33,7 +33,7 @@
         letter-spacing: 3px;
         font-size: 40px;
         font-weight: 200;
-        border-bottom: 1px solid $spring_meadow;
+        border-bottom: 1px solid $apple_green;
       }
     }
 
@@ -75,13 +75,13 @@
     input[type='submit'] {
       margin-top: 20px;
       color: #fff;
-      background-color: $sunny_side_up;
+      background-color: $golden_yellow;
     }
 
     .field-label {
       .field_with_errors {
         display: inline-block;
-        color: $berry_jam;
+        color: $rose;
         font-weight: 400;
       }
     }
@@ -98,7 +98,7 @@
     //       right: 0;
     //       bottom: 0;
     //       width: 5px;
-    //       background-color: $berry_jam;
+    //       background-color: $rose;
     //     }
     //   }
     // }
@@ -112,7 +112,7 @@
           letter-spacing: 3px;
           font-size: 40px;
           font-weight: 200;
-          border-bottom: 1px solid $spring_meadow;
+          border-bottom: 1px solid $apple_green;
         }
       }
       &__tiles {
@@ -131,7 +131,7 @@
           flex-direction: column;
     
           &__image {
-            background-color: $gentle_sky;
+            background-color: skyblue;
             height: 225px;
             object-fit: cover;
           }
@@ -157,7 +157,7 @@
   .btn {
   margin-top: 20px;
   color: #fff;
-  background-color: $spring_meadow;
+  background-color: $apple_green;
   font-size: 14px;
   }
 
@@ -188,12 +188,12 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid $soft_mocha;
+  border: 1px solid $cocoa_brown;
   border-radius: 2px;
 
   h2 {
     margin-bottom: 10px;
-    color: $berry_jam;
+    color: $rose;
     font-size: 14px;
   }
 

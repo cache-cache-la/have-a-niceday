@@ -5,16 +5,16 @@
     .side__header__system-menu
       .side__header__system-menu__user
         -if user_signed_in?
-          = link_to image_tag("current_user.png", size: "30x41", alt: "ユーザー編集"), edit_user_path(current_user)
+          = link_to image_tag("current_user.png", size: "30x41", title: "ユーザー編集"), edit_user_path(current_user)
         -else
-          = link_to image_tag("new_user.png", size: "30x41", alt: "新規登録"), new_user_registration_path
+          = link_to image_tag("new_user.png", size: "30x41", title: "新規登録"), new_user_registration_path
       .side__header__system-menu__post
         -if user_signed_in?
-          = link_to image_tag("users_post.png", size: "32x37", alt: "投稿"), new_entry_path
+          = link_to image_tag("users_post.png", size: "32x37", title: "新規投稿"), new_entry_path
         -else
-          = link_to image_tag("current_user.png", size: "30x41", alt: "ログイン"), new_user_session_path
+          = link_to image_tag("current_user.png", size: "30x41", title: "ログイン"), new_user_session_path
       .side__header__system-menu__official-twitter
-        = link_to image_tag("bluebird.png", size: "45x41", alt: "製作者のTwitter"), "https://twitter.com/cache_cache_la", target: :_blank
+        = link_to image_tag("bluebird.png", size: "45x41", title: "製作者のTwitter"), "https://twitter.com/cache_cache_la", target: :_blank
 
   .side__box
     .side__box__keyword-search

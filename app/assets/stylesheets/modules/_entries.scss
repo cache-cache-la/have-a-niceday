@@ -28,7 +28,7 @@
       letter-spacing: 3px;
       font-size: 40px;
       font-weight: 200;
-      border-bottom: 1px solid $spring_meadow;
+      border-bottom: 1px solid $apple_green;
     }
   }
 
@@ -48,7 +48,7 @@
       flex-direction: column;
 
       &__image {
-        background-color: $gentle_sky;
+        background-color: skyblue;
         height: 225px;
         object-fit: cover;
       }

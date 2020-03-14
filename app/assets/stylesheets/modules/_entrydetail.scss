@@ -28,7 +28,7 @@
   //     letter-spacing: 3px;
   //     font-size: 40px;
   //     font-weight: 200;
-  //     border-bottom: 1px solid $spring_meadow;
+  //     border-bottom: 1px solid $apple_green;
   //   }
   // }
   .entry__detail {
@@ -85,16 +85,16 @@
   }
 
   .entry__comments {
-    background-color: $harvest_cream;
+    background-color: $vanilla;
     height: 350px;
     margin: 0 70px;
     padding: 60px;
-  
+
     .entry__comments__list {
       height: 100px;
       width: 100%;
       padding: 5px;
-      border: dashed 1px $soft_mocha;
+      border: dashed 1px $cocoa_brown;
       overflow: scroll;
 
       .entry__comments__list__box {
@@ -136,7 +136,7 @@
       input[type='submit'] {
         margin-top: 20px;
         color: #fff;
-        background-color: $sunny_side_up;
+        background-color: $golden_yellow;
       }
     }
   }
