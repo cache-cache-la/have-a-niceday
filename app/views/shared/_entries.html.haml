@@ -7,7 +7,7 @@
 
 .entries__latest-tiles
   - entries.each do |entry|
-    .tile
+    = link_to "/entries/#{entry.id}", class: "tile" do
       - if entry.image.present?
         = image_tag entry.image.url, class: "tile__image"
       - else
@@ -16,6 +16,7 @@
         = entry.title
       .tile__user-name
         = entry.user.name
+  = paginate(@entries)
 
 .entries__bottom
   .entries__bottom__left-corner

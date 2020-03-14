@@ -146,6 +146,10 @@
             text-overflow: ellipsis;
           }
         }
+        a {
+          text-decoration: none;
+          color: $olive_green;
+        }
       }
     }
   }

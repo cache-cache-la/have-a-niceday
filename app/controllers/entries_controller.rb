@@ -14,6 +14,7 @@ class EntriesController < ApplicationController
 
   def create
     Entry.create(entry_params)
+    redirect_to action: :index
   end
 
   def edit
@@ -25,6 +26,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @comments = @entry.comments.includes(:user)
   end
 
