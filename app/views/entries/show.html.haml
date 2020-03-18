@@ -25,7 +25,11 @@
         = raw Rinku.auto_link(simple_format(h(@entry.url)), mode=:all, link_attr='target="_blank", rel="noopener"', skip_tags=nil)
       - else
         URLはありません
-    .entry__detail__tag
+    .entry__detail__tags
+      - @entry.tags.each do |tag|
+        .entry-tag
+          = link_to tag.name, tag_path(tag.id)
+
 
   .entry__comments
     .entry__comments__list

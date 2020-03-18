@@ -15,4 +15,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require intro
+//= require jquery.cookie
 //= require_tree .

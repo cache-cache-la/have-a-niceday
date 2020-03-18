@@ -9,7 +9,7 @@
 
   .entries__latest-tiles
     - @entries.each do |entry|
-      = link_to "/entries/#{entry.id}", class: "tile" do
+      = link_to entry_path(entry.id), class: "tile" do
         - if entry.image.present?
           = image_tag entry.image.url, class: "tile__image"
         - else

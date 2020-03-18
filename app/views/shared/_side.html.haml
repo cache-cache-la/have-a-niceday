@@ -30,16 +30,16 @@
         %b 時間の目安
         - @time.each do |tm|
           %li.tag__time
-            = link_to "#{tm.name}", "/tags/#{tm.id}"
+            = link_to "#{tm.name}", tag_path(tm.id)
 
       %ul.side__box__tag-list__place
         %b 行う場所
         - @place.each do |pl|
           %li.tag__place
-            = link_to "#{pl.name}", "/tags/#{pl.id}"
+            = link_to "#{pl.name}", tag_path(pl.id)
 
       %ul.side__box__tag-list__feeling
         %b 気分／雰囲気
         - @feeling.each do |fl|
           %li.tag__feeling
-            = link_to "#{fl.name}", "/tags/#{fl.id}"
+            = link_to "#{fl.name}", tag_path(fl.id)

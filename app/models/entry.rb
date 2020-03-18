@@ -9,6 +9,9 @@ class Entry < ApplicationRecord
     validates :text
   end
 
+  validates :title, length: { maximum: 50 }
+  validates :text, length: { maximum: 255 }
+
   mount_uploader :image, ImageUploader
 
   def self.search(search)
