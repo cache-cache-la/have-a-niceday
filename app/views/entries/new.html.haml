@@ -12,17 +12,20 @@
           .field-label
             = f.label :タイトル
           .field-input
-            = f.text_field :title, autofocus: true
+            = f.text_field :title, maxlength: "50", class: "js-count", autofocus: true
+            .counter
+              %span.show-count> 0
+              \/ 50
 
           .field_tags
             .field-tags__title
               タグ一覧
             .field-tags__time
-              = f.label :所要時間, class: "field-tags__category"
+              = f.label :時間の目安, class: "field-tags__category"
               = f.collection_check_boxes :tag_ids, Tag.all.to_a.slice(0..4), :id, :name
 
             .field-tags__place
-              = f.label :場所, class: "field-tags__category"
+              = f.label :行う場所, class: "field-tags__category"
               = f.collection_check_boxes :tag_ids, Tag.all.to_a.slice(5..8), :id, :name
 
             .field-tags__feeling
@@ -33,13 +36,21 @@
           .field-label
             = f.label :本文
           .field-input
-            = f.text_area :text
+            = f.text_area :text, maxlength: "255", class: "js-count"
+            .counter
+              %span.show-count> 0
+              \/ 255
         .field
           .field-label
-            画像選択
+            画像選択／プレビュー（画像投稿後は差し替えのみ可能です）
           = f.label :image, class: "field-image" do
             %i.far.fa-image.fa-2x
               = f.file_field :image, class: "field-file"
+          .preview-box
+            .preview
+            .image-delete
+              Delete
+
         .field
           .field-label
             = f.label :URL

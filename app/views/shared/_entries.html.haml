@@ -11,12 +11,12 @@
       - if entry.image.present?
         = image_tag entry.image.url, class: "tile__image"
       - else
-        = image_tag "noimage.png", size: "225x225", alt: "no image"
+        .tile__noimage
       .tile__title
         = entry.title
       .tile__user-name
         = entry.user.name
-  = paginate(@entries)
+= paginate(@entries)
 
 .entries__bottom
   .entries__bottom__left-corner

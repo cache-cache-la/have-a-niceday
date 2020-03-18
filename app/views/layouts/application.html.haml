@@ -7,11 +7,15 @@
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
   %body
     .wrapper
       = render "shared/side"
       .container
+        = render 'layouts/notifications'
         = yield
         = render "shared/footer"

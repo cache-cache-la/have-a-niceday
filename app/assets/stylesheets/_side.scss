@@ -1,5 +1,5 @@
 .side {
-  background-color: $cinnamon;
+  background-color: $caramel;
   width: 300px;
   padding: 0 20px;
 
@@ -45,15 +45,19 @@
         height: 100%;
         width: 100%;
         display: flex;
+        justify-content: space-between;
 
         .search-words {
-          height: 100%;
-          width: 80%;
+          background-color: rgba($color: #fff, $alpha: 0.0);
+          height: 96%;
+          width: 77%;
           border-style: none;
         }
         .search-btn {
-          height: 100%;
-          width: 20%;
+          background-color: rgba($color: #fff, $alpha: 0.0);
+          height: 96%;
+          width: 23%;
+          border-style: none;
           cursor: pointer;
         }
       }
@@ -69,6 +73,7 @@
     }
 
     .side__box__tag-list {
+      background-color: $white_lily;
       margin-top: 20px;
       height: 480px;
       padding: 10px;

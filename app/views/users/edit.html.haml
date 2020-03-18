@@ -12,7 +12,10 @@
           .field-label
             = f.label :name
           .field-input
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, maxlength: "50", class: "js-count", autofocus: true
+            .counter
+              %span.show-count> 0
+              \/ 50
         .field
           .field-label
             = f.label :email
@@ -28,16 +31,16 @@
         %h2 投稿一覧
       .account-page__inner__entries__tiles
         - @entries.each do |entry|
-          = link_to "/entries/#{entry.id}", class: "tile" do
+          = link_to entry_path, class: "tile" do
             - if entry.image.present?
               = image_tag entry.image.url, class: "tile__image"
             - else
-              = image_tag "noimage.png", size: "225x225", alt: "no image"
+              .tile__noimage
             .tile__title
               = entry.title
             .tile__user-name
               = entry.user.name
-        = paginate(@entries)
+      = paginate(@entries)
 
   .account-page__bottom
     .account-page__bottom__left-corner

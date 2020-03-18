@@ -1,64 +1,45 @@
 .side
   .side__header
     .side__header__appname
-      = image_tag "appname_spring.png", size: "250x193", alt: "春の看板"
+      = link_to image_tag("appname_spring.png", size: "250x193", title: "トップページ"), root_path
     .side__header__system-menu
       .side__header__system-menu__user
-        -if user_signed_in?
+        - if user_signed_in?
           = link_to image_tag("current_user.png", size: "30x41", title: "ユーザー編集"), edit_user_path(current_user)
-        -else
+        - else
           = link_to image_tag("new_user.png", size: "30x41", title: "新規登録"), new_user_registration_path
       .side__header__system-menu__post
-        -if user_signed_in?
+        - if user_signed_in?
           = link_to image_tag("users_post.png", size: "32x37", title: "新規投稿"), new_entry_path
-        -else
+        - else
           = link_to image_tag("current_user.png", size: "30x41", title: "ログイン"), new_user_session_path
       .side__header__system-menu__official-twitter
-        = link_to image_tag("bluebird.png", size: "45x41", title: "製作者のTwitter"), "https://twitter.com/cache_cache_la", target: :_blank
+        = link_to image_tag("bluebird.png", size: "45x41", title: "製作者のTwitter"), "https://twitter.com/cache_cache_la", target: :_blank, rel: :noopener
 
   .side__box
     .side__box__keyword-search
-      .form
-        .search-words
-        .search-btn
+      = form_with(url: search_entries_path, local: true, method: :get, class: "form") do |f|
+        = f.text_field :keyword, placeholder: " キーワード検索", class: "search-words"
+        = f.submit "", class: "search-btn"
 
     .side__box__tags
 
     .side__box__tag-list
 
       %ul.side__box__tag-list__time
-        %b 所要時間
-        %li.tag__few-minutes
-          = link_to "1時間以内", "/entries/#{@tag_id}/"
-        %li.tag__a-few-hours
-          = link_to "数時間", "/entries/#{@tag_id}/"
-        %li.tag__half-a-day
-          = link_to "半日", "/entries/#{@tag_id}/"
-        %li.tag__one-day
-          = link_to "1日", "/entries/#{@tag_id}/"
-        %li.tag__long-term
-          = link_to "長時間", "/entries/#{@tag_id}/"
+        %b 時間の目安
+        - @time.each do |tm|
+          %li.tag__time
+            = link_to "#{tm.name}", "/tags/#{tm.id}"
 
       %ul.side__box__tag-list__place
-        %b 場所
-        %li.tag__myhome
-          = link_to "自宅", "/entries/#{@tag_id}/"
-        %li.tag__indoor
-          = link_to "屋内", "/entries/#{@tag_id}/"
-        %li.tag__outdoor
-          = link_to "屋外", "/entries/#{@tag_id}/"
-        %li.tag__noplace
-          = link_to "場所不問", "/entries/#{@tag_id}/"
+        %b 行う場所
+        - @place.each do |pl|
+          %li.tag__place
+            = link_to "#{pl.name}", "/tags/#{pl.id}"
 
       %ul.side__box__tag-list__feeling
         %b 気分／雰囲気
-        %li.tag__calm
-          = link_to "calm", "/entries/#{@tag_id}/"
-        %li.tag__soft
-          = link_to "soft", "/entries/#{@tag_id}/"
-        %li.tag__happy
-          = link_to "happy", "/entries/#{@tag_id}/"
-        %li.tag__excite
-          = link_to "excite", "/entries/#{@tag_id}/"
-        %li.tag__impact
-          = link_to "impact", "/entries/#{@tag_id}/"
+        - @feeling.each do |fl|
+          %li.tag__feeling
+            = link_to "#{fl.name}", "/tags/#{fl.id}"

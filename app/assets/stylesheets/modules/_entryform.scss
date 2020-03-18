@@ -24,8 +24,8 @@
   }
 
   &__inner {
-    height: 1100px;
-    margin: 40px auto;
+    height: 1160px;
+    margin: 0 auto;
     padding: 60px;
 
     &__header {
@@ -53,6 +53,7 @@
       }
 
       .field-input {
+
         input {
           width: 100%;
           padding: 10px;
@@ -64,6 +65,9 @@
           padding: 10px;
           border: solid 1px lightgray;
           letter-spacing: 1px;
+        }
+        .counter {
+          text-align: right;
         }
       }
       .field-tags {
@@ -81,12 +85,41 @@
         }
       }
       .field-image {
+
         i {
           cursor: pointer;
 
           .field-file {
             display: none;
           }
+        }
+      }
+      .preview-box{
+        position: relative;
+        margin-left: 80px;
+        padding: 8px;
+        height: 240px;
+        width: 80%;
+        border: dashed 1px $olive_green;
+
+        .preview {
+          height: 224px;
+          width: calc(100% - 64px);
+          object-fit: contain;
+        }
+        .image-delete {
+          z-index: 1;
+          position: absolute;
+          bottom: 4px;
+          right: 4px;
+          text-align: center;
+          color: #fff;
+          padding: 4px;
+          width: 56px;
+          border: none;
+          border-radius: 2px;
+          cursor: pointer;
+          background-color: $rose;
         }
       }
     }

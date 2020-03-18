@@ -57,6 +57,9 @@
           padding: 10px;
           letter-spacing: 1px;
         }
+        .counter {
+          text-align: right;
+        }
       }
     }
 
@@ -86,22 +89,22 @@
       }
     }
 
-    // .field-input {
-    //   .field_with_errors {
-    //     position: relative;
+    .field-input {
+      .field_with_errors {
+        position: relative;
 
-    //     &:after {
-    //       content: '';
-    //       display: block;
-    //       position: absolute;
-    //       top: 0;
-    //       right: 0;
-    //       bottom: 0;
-    //       width: 5px;
-    //       background-color: $rose;
-    //     }
-    //   }
-    // }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 5px;
+          background-color: $rose;
+        }
+      }
+    }
 
     &__entries {
       height: calc(100% - 450px);
@@ -129,11 +132,18 @@
           margin: 10px;
           display: flex;
           flex-direction: column;
-    
+
           &__image {
             background-color: skyblue;
             height: 225px;
             object-fit: cover;
+          }
+          &__noimage {
+            background-image: url(noimage.png);
+            height: 225px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
           }
           &__title {
             margin-top: 5px;

@@ -4,38 +4,47 @@
     .entry__top__right-corner
 
   .entry__detail
+    - if current_user == @entry.user
+      .edit-box
+        = link_to "Edit", edit_entry_path, class: "entry-edit"
+        = link_to "Delete", entry_path(@entry), class: "entry-delete", method: :delete
+    - if user_signed_in? && current_user != @entry.user
+      %i.fas.fa-heart.fa-2x
     - if @entry.image.present?
       = image_tag @entry.image.url, class: "entry__detail__image"
     - else
-      = image_tag "noimage.png", size: "450x450", class: "entry__detail__image"
+      .entry__detail__noimage
     .entry__detail__title
       = @entry.title
     .entry__detail__user-name
-      = @entry.user.name
+      = link_to @entry.user.name, user_path(@entry.user_id)
     .entry__detail__text
       = @entry.text
     .entry__detail__url
-      = @entry.url
-      -# = url_to_link(sanitize(@entry.url))
+      - if @entry.url?
+        = raw Rinku.auto_link(simple_format(h(@entry.url)), mode=:all, link_attr='target="_blank", rel="noopener"', skip_tags=nil)
+      - else
+        URLはありません
     .entry__detail__tag
 
   .entry__comments
     .entry__comments__list
-      .entry__comments__list__box
-        .entry__comments__list__box__text
-          行ってみたいですね
-        .entry__comments__list__box__user-name
-          bbb
-        -# - if @comments
-        -#   = @comments.each do |comment|
-        -#     = comment.text
-        -#     = comment.user.name
+      - if @comments
+        - @comments.each do |comment|
+          .entry__comments__list__box
+            .entry__comments__list__box__text
+              = comment.text
+            .entry__comments__list__box__user-name
+              = link_to comment.user.name, user_path(comment.user_id)
 
     .entry__comments__form
       - if current_user
-        = form_for "/entries/#{@entry.id}/comments", class: "field", method: :post do |f|
+        = form_for [@entry, @comment] do |f|
           .field-input
-            = f.text_field :comment, placeholder: "コメントをどうぞ", autofocus: true
+            = f.text_field :text, maxlength: "100", class: "js-count", placeholder: "コメントをどうぞ"
+            .counter
+              %span.show-count> 0
+              \/ 100
           .actions
             = f.submit "Send", class: 'btn'
 

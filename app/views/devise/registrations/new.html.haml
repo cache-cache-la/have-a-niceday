@@ -13,7 +13,10 @@
           .field-label
             = f.label :登録名
           .field-input
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, maxlength: "50", class: "js-count", autofocus: true
+            .counter
+              %span.show-count> 0
+              \/ 50
         .field
           .field-label
             = f.label :email

@@ -5,10 +5,14 @@
 @import "./config/common";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "introjs";
 @import "./side";
 @import "./container";
+@import "modules/flash";
 @import "modules/entries";
 @import "modules/entryform";
 @import "modules/entrydetail";
+@import "modules/tagentries";
 @import "modules/user";
+@import "modules/kaminari";
 @import "./footer";
