@@ -13,10 +13,10 @@
           .field-label
             = f.label :name
           .field-input
-            = f.text_field :name, maxlength: "50", class: "js-count", autofocus: true
+            = f.text_field :name, maxlength: "25", class: "js-count", autofocus: true
             .counter
               %span.show-count> 0
-              \/ 50
+              \/ 25
         .field
           .field-label
             = f.label :email
@@ -30,7 +30,7 @@
             = f.password_field :password, autocomplete: "off"
         .field
           .field-label
-            = f.label :Passwordをもう一度お願いします
+            = f.label :パスワードをもう一度お願いします
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
