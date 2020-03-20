@@ -1,5 +1,9 @@
 nav.pagination {
+  position: absolute;
+  z-index: 1;
   text-align: center;
+  left: 0;
+  right: 0;
   margin: 32px auto 0;
   padding: 0;
 

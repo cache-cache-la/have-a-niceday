@@ -26,6 +26,7 @@
       - else
         URLはありません
     .entry__detail__tags
+      タグ：
       - @entry.tags.each do |tag|
         .entry-tag
           = link_to tag.name, tag_path(tag.id)

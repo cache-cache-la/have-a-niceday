@@ -46,7 +46,6 @@ describe User do
     # 7. nicknameが25文字以下では登録できること
     it "is valid with a nickname that has less than 25 characters " do
       user = build(:user, name: "aaaaaaaaaaaaaaaaaaaaaaaaa")
-      user.valid?
       expect(user).to be_valid
     end
 
@@ -61,7 +60,6 @@ describe User do
     # 9. passwordが8文字以上であれば登録できること
     it "is valid with a password that has more than 8 characters " do
       user = build(:user, password: "00000000", password_confirmation: "00000000")
-      user.valid?
       expect(user).to be_valid
     end
 
