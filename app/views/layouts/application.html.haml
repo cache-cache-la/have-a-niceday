@@ -3,14 +3,19 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %link{:href => "https://fonts.googleapis.com/css?family=M+PLUS+1p:300,500|Montserrat:300,500&display=swap", :rel => "stylesheet"}/
-    %title Have a Nice Day
+    %title Have a Nice Day !
+    = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
   %body
     .wrapper
       = render "shared/side"
       .container
+        = render 'layouts/notifications'
         = yield
         = render "shared/footer"

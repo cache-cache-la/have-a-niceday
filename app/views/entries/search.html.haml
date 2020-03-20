@@ -1,0 +1,27 @@
+.entries
+  .entries__top
+    .entries__top__left-corner
+    .entries__top__right-corner
+
+  .entries__latest-title
+    .title-box
+      %h2 キーワード検索
+      %h4
+        = "検索結果： #{@keyword_count} 件"
+
+  .entries__latest-tiles
+    - @entries.each do |entry|
+      = link_to entry_path(entry.id), class: "tile" do
+        - if entry.image.present?
+          = image_tag entry.image.url, class: "tile__image"
+        - else
+          .tile__noimage
+        .tile__title
+          = entry.title
+        .tile__user-name
+          = entry.user.name
+  = paginate(@entries)
+
+  .entries__bottom
+    .entries__bottom__left-corner
+    .entries__bottom__right-corner
