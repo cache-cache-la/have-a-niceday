@@ -24,7 +24,7 @@
   }
   .entry__detail {
     background-color: white;
-    height: 800px;
+    height: 830px;
     margin: 10px 70px 10px;
     padding: 40px;
     display: flex;
@@ -106,15 +106,17 @@
       margin: 5px auto;
       white-space: pre-wrap;
       border: dashed 1px $olive_green;
-      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
     &__url {
-      height: 30px;
+      height: 40px;
       width: 100%;
       padding: 5px;
       margin: 5px auto;
       border: dashed 1px $olive_green;
-      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
 
       a {
         background-color: $white_lily;
@@ -126,12 +128,13 @@
     &__tags {
       display: flex;
       flex-wrap: wrap;
-      height: 30px;
+      height: 40px;
       width: 100%;
       padding: 5px;
       margin: 5px auto;
       border: dashed 1px $olive_green;
-      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
 
       .entry-tag {
         margin-right: 24px;
@@ -148,7 +151,7 @@
 
   .entry__comments {
     background-color: $vanilla;
-    height: 350px;
+    height: 320px;
     margin: 0 70px;
     padding: 40px;
 
@@ -157,7 +160,8 @@
       width: 100%;
       padding: 5px;
       border: dashed 1px $olive_green;
-      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
 
       &__box {
         padding: 5px;
@@ -208,7 +212,6 @@
       }
 
       input[type='submit'] {
-        margin-top: 20px;
         color: #fff;
         background-color: $golden_yellow;
       }
