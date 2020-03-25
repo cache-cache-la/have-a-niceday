@@ -58,7 +58,8 @@ https://have-a-nice-day.herokuapp.com/
 
 # Programming languages, tools, etc.
 html(haml), css(scss), Ruby on Rails, Javascript, jQuery, IntroJS<br>
-Github, AWS(S3), Heroku
+Github, AWS(S3), Heroku<br>
+
 <br>
 
 # データベース設計
