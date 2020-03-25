@@ -50,7 +50,7 @@ https://have-a-nice-day.herokuapp.com/
 ユーザー名: tester1<br>
 メールアドレス： test1@test.com<br>
 パスワード： test1111<br>
-<br>
+
 * 非投稿者用
 ユーザー名: tester2<br>
 メールアドレス： test2@test.com<br>
