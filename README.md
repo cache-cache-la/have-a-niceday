@@ -56,6 +56,9 @@ https://have-a-nice-day.herokuapp.com/
 メールアドレス： test2@test.com<br>
 パスワード： test2222<br>
 
+# Programming languages, tools, etc.
+html(haml), css(scss), Ruby on Rails, Javascript, jQuery, IntroJS<br>
+Github, AWS(S3), Heroku
 <br>
 
 # データベース設計
