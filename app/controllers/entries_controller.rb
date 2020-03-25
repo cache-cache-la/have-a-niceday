@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  # before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_entry, only: [:edit, :update, :show, :destroy]
   before_action :set_tags
 
