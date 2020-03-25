@@ -43,15 +43,18 @@ Have a Nice Day!
 
 # Issue
 ## URL 
+https://have-a-nice-day.herokuapp.com/
 
 ## Test account
 * 投稿者用
-メールアドレス： 
-パスワード：
-
+ユーザー名: tester1<br>
+メールアドレス： test1@test.com<br>
+パスワード： test1111<br>
+<br>
 * 非投稿者用
-メールアドレス： 
-パスワード： 
+ユーザー名: tester2<br>
+メールアドレス： test2@test.com<br>
+パスワード： test2222<br>
 
 <br>
 
